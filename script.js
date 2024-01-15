@@ -1,8 +1,11 @@
 const containerDiv = document.querySelector('#container');
 const gridSizeInput = document.querySelector('#gridSizeInput');
+const colorInput = document.querySelector('#colorInput');
 
 let gridSize = 16; 
-let paintingColor = "red";
+let paintingColor = colorInput.value;
+
+
 
 createGrid();
 
@@ -12,6 +15,10 @@ gridSizeInput.addEventListener('change', () =>{
     createGrid();
 
 });
+colorInput.addEventListener('change', () => {
+    paintingColor = colorInput.value;
+});
+
 
 function createGrid(){
     for(let i = 1;i <= gridSize * gridSize; i++){
